@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>برنامج مذاكرة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h2 id="question">السؤال هنا</h2>
+
+        <button class="choice" onclick="checkAnswer(0)"></button>
+        <button class="choice" onclick="checkAnswer(1)"></button>
+        <button class="choice" onclick="checkAnswer(2)"></button>
+
+        <p id="score"></p>
+        <button onclick="nextQuestion()">السؤال التالي</button>
+    </div>
+    <button id="skipToUnit3">تخطي إلى الوحدة الثالثة</button>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
