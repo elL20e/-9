@@ -306,3 +306,33 @@ function shuffleQuestions(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
+
+function finishUnit(unitNumber) {
+    // وحدة 3 خلصت
+    if (unitNumber === 3) {
+        document.getElementById("skipToUnit4").style.display = "inline-block";
+    }
+    // وحدة 4 خلصت
+    if (unitNumber === 4) {
+        document.getElementById("skipToUnit5").style.display = "inline-block";
+    }
+}
+
+function startUnit(unitNumber) {
+    if (unitNumber === 4) {
+        allQuestions = [...unit4Questions]; // هنا تحط أسئلة الوحدة الرابعة
+    }
+    if (unitNumber === 5) {
+        allQuestions = [...unit5Questions]; // هنا تحط أسئلة الوحدة الخامسة
+    }
+    shuffleQuestions(allQuestions);
+    currentQuestion = 0;
+    score = 0;
+    choicesEl.forEach(btn => btn.style.display = "inline-block");
+    loadQuestion();
+
+    // بعد بدء الوحدة الجديدة نخفي الزر
+    if (unitNumber === 4) document.getElementById("skipToUnit4").style.display = "none";
+    if (unitNumber === 5) document.getElementById("skipToUnit5").style.display = "none";
+}
+
